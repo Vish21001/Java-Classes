@@ -11,6 +11,21 @@ public class TextMessage
         message = theMessage;
     }
     
+    public String getSender()
+    {
+        return sender;
+    }
+    
+    public String getReceiver()
+    {
+        return receiver;
+    }
+    
+    public String getMessage()
+    {
+        return message;
+    }
+    
     public String toString()
     {
         return sender + " texted " + receiver + ": " + message;
