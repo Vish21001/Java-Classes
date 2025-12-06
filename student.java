@@ -3,8 +3,9 @@ public class Student
     private String firstName;
     private String lastName;
     private int gradeLevel;
-    private int studentGPA;
-    
+    private double gpa;
+    private boolean isHonorsStudent;
+
     /**
      * This is a constructor.  A constructor is a method
      * that creates an object -- it creates an instance
@@ -20,7 +21,29 @@ public class Student
         firstName = fName;
         lastName = lName;
         gradeLevel = grade;
-        studentGPA = sGPA;
+    }
+    
+    public boolean isHonorsStudent()
+    {
+        if(gpa >= 3.5)
+        {
+            isHonorsStudent = true;
+            return isHonorsStudent;
+        }
+        if(gpa < 3.5)
+        {
+            isHonorsStudent = false;
+            return isHonorsStudent;
+        }
+        return isHonorsStudent();
+    }
+    
+   
+    
+    // This is a setter method to set the GPA for the Student.
+    public void setGPA(double theGPA)
+    {
+        gpa = theGPA;
     }
     
     /**
@@ -30,6 +53,6 @@ public class Student
      */
     public String toString()
     {
-        return firstName + " " + lastName + " is in grade: " + gradeLevel + " and has GPA: " + studentGPA;
+        return firstName + " " + lastName + " is in grade: " + gradeLevel;
     }
 }
