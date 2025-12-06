@@ -11,9 +11,14 @@ public class GeoLocation
 {
     // Earth radius in miles
     public static final double RADIUS = 3963.1676;  
+    
+    // Number of kilomteres in one mile
+    public static final double KM_PER_MILE = 1.60934;
+
 
     private double latitude;
     private double longitude;
+    private double speed;
 
     /**
      * Constructs a geo location object with given latitude and longitude
@@ -44,6 +49,12 @@ public class GeoLocation
     public String toString() 
     {
         return "latitude: " + latitude + ", longitude: " + longitude;
+    }
+
+    public double distanceFromInKilometers(GeoLocation other)
+    {
+        double miles = distanceFrom(other);
+        return miles * KM_PER_MILE;
     }
 
     // returns the distance in miles between this geo location and the given
